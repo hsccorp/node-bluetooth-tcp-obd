@@ -133,7 +133,7 @@ Attempt discovery of the device based on a query string, and call connect() on t
 
  * **string** *query* (Optional) string to be matched against address/channel (fuzzy-ish)
 
-#### connect(address, channel)
+#### connect(address, channel) [do not use for TCP]
 
 Connect/Open the serial port and add events to serialport. Also starts the intervalWriter that is used to write the queue.
 
