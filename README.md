@@ -2,15 +2,20 @@
 
 What
 ===============
-A TCP/IP Channel fork of this excellent library by Eric Smekens
-I'm only testing this with the [TCP server fork of OBDSim](https://github.com/oesmith/obdgpslogger) at the moment.
+A TCP/IP Channel fork of this excellent library by Eric Smekens. I've not tested whether my mods
+have adversely affected BT. It might have, but in general, I've tried to re-use Eric's approach, including
+using his queue to moderate rate. There is redundant code at the moment that needs cleanup.
+
+Testing
+==========
+So far, I've only tested this with the [TCP server fork of OBDSim](https://github.com/oesmith/obdgpslogger)  and it seems to work well.
 
 
 [![NPM](https://nodei.co/npm/bluetooth-obd.png?downloads=true&stars=true)](https://nodei.co/npm/bluetooth-obd/)
 
 Example Code
 -------------
-```
+```javascript
 export class MyComponent {
   constructor(public navCtrl: NavController, public plt: Platform) {
            plt.ready().then(() => {
