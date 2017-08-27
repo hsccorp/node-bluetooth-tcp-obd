@@ -10,8 +10,25 @@ Testing
 ==========
 So far, I've only tested this with the [TCP server fork of OBDSim](https://github.com/oesmith/obdgpslogger)  and it seems to work well.
 
+I run `obdsim` as follows:
+```
+obdsim -T 5000 -g Cycle
+```
+This runs `obdsim` on port 5000 on my mac and I can then connect to it using this library.
 
-[![NPM](https://nodei.co/npm/bluetooth-obd.png?downloads=true&stars=true)](https://nodei.co/npm/bluetooth-obd/)
+**NOTE that this only works on a real device as it needs a cordova plugin for a TCP socket**
+
+Installation
+=============
+```
+npm install https://github.com/hsccorp/node-bluetooth-tcp-obd --save
+```
+
+You will also need to install this cordova plugin in your app to initiate a TCP connection
+```
+cordova plugin add cz.blocshop.socketsforcordova
+```
+
 
 Example Code
 -------------
@@ -104,8 +121,10 @@ Parses a hexadecimal string to a reply object. Uses PIDS. (obdInfo.js)
 * **string** reply.mode - The mode of the PID. --! Only if the reply is a PID.
 * **string** reply.pid - The PID. --! Only if the reply is a PID.
 
-#### autoconnect(query)
+#### autoconnect(type?, query)
 
+if type == 'TCP' then it connects using TCP and query needs to be "host:port". If you omit type, or use any other value,then it falls back to BT.
+If BT:
 Attempt discovery of the device based on a query string, and call connect() on the first match.
 
 ##### Params:
