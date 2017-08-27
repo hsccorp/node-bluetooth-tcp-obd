@@ -1,18 +1,18 @@
 {
-  "name": "obd-bluetooth-wifi",
+  "name": "obd-bluetooth-tcp",
   "version": "0.2.4",
-  "description": "Package for communicating with a WiFi/bluetooth OBD-II reader",
+  "description": "Package for communicating with a TCP/bluetooth OBD-II reader",
   "author": {
     "name": "Eric Smekens",
     "email": "ericsmekens@msn.com",
     "url": "http://github.com/EricSmekens"
   },
   "contributors": [
-    "Pliable Pixels <pliablepixels@gmail.com>"
+          "Arjun Roychowdhury <arjun@hsc.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pliablepixels/node-bluetooth-wifi-obd.git"
+    "url": "git+https://github.com/hsccorp/node-bluetooth-tcp-obd.git"
   },
   "directories": {
     "lib": "./lib"
@@ -34,6 +34,7 @@
     "car",
     "bluetooth",
     "wifi",
+    "tcp",
     "rfcomm",
     "ecu"
   ],
