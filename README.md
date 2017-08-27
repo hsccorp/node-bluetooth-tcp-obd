@@ -2,7 +2,7 @@
 
 What
 ===============
-A TCP/IP Channel fork of this excellent library by Eric Smekens. I've not tested whether my mods
+A TCP/IP Channel fork Eric Smekens' [node-bluetooth-obd](https://github.com/EricSmekens/node-bluetooth-obd) library. I've not tested whether my mods
 have adversely affected BT. It might have, but in general, I've tried to re-use Eric's approach, including
 using his queue to moderate rate. There is redundant code at the moment that needs cleanup.
 
