@@ -49,59 +49,7 @@ export class MyComponent {
   } // class
 ```
 
-Original README follows below
-==============================
 
-bluetooth-obd - 0.2.4
-========================
-
-# Bluetooth communication for OBD-II ELM327 devices.
-This node module lets you communicate over a bluetooth serial port with OBD-II ELM327 Connectors using Node.js.
-# Limitations
-* Only tested on ELM327 devices.
-* Not all OBD-II Commands are implemented yet.
-
-# Pre-Requirements
-* If it's a Bluetooth ELM327, then it should already be paired! If this hasn't been done, it will cause a connection error.
-* bluetooth-serial-port (module that is used by this module, thanks to Eelco) requires libbluetooth-dev package:
-** $ sudo apt-get install libbluetooth-dev
-
-# Serial
-* If you're looking for serial RS23 connection, look into serial-obd.
-
-# Install
-`npm install bluetooth-obd`
-
-# Documentation
-
-## Basic usage
-
-```javascript
-var OBDReader = require('bluetooth-obd');
-var btOBDReader = new OBDReader();
-var dataReceivedMarker = {};
-
-btOBDReader.on('connected', function () {
-    //this.requestValueByName("vss"); //vss = vehicle speed sensor
-
-    this.addPoller("vss");
-    this.addPoller("rpm");
-    this.addPoller("temp");
-    this.addPoller("load_pct");
-    this.addPoller("map");
-    this.addPoller("frp");
-
-    this.startPolling(1000); //Request all values each second.
-});
-
-btOBDReader.on('dataReceived', function (data) {
-    console.log(data);
-    dataReceivedMarker = data;
-});
-
-// Use first device with 'obd' in the name
-btOBDReader.autoconnect('obd');
-```
 ## API
 
 ### OBDReader
