@@ -37,20 +37,20 @@ Example Code
 
 See [HERE](https://github.com/hsccorp/obd-tcp-test) for an example ionic2 app
 
-```javascript
+```typescript
 export class MyComponent {
   constructor(public navCtrl: NavController, public plt: Platform) {
            plt.ready().then(() => {
           console.log ("Platform ready, instantiating OBD");
         
-            var OBDReader = require ('obd-bluetooth-wifi');
+            var OBDReader = require ('obd-bluetooth-tcp');
             wifiOBDReader = new OBDReader();
 
             wifiOBDReader.on ('debug' , function (data) {console.log ("=>APP DEBUG:"+ data)});
             wifiOBDReader.on ('error' , function (data) {console.log ("=>APP ERROR:"+ data)});
             wifiOBDReader.setProtocol(0);
 
-            wifiOBDReader.autoconnect("wifi","192.168.1.103:5001");
+            wifiOBDReader.autoconnect("TCP","192.168.1.103:5000");
 
             wifiOBDReader.on ('connected', function () {
             console.log ("=>APP: Connected");
