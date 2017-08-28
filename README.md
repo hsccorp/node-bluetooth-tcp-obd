@@ -18,7 +18,7 @@ This runs `obdsim` on port 5000 on my mac and I can then connect to it using thi
 
 **NOTE that this only works on a real device as it needs a cordova plugin for a TCP socket**
 
-See [HERE] (https://github.com/hsccorp/obd-tcp-test) for a working ionic app that uses this library
+See [HERE](https://github.com/hsccorp/obd-tcp-test) for a working ionic app that uses this library
 
 Installation
 =============
@@ -34,6 +34,9 @@ cordova plugin add cz.blocshop.socketsforcordova
 
 Example Code
 -------------
+
+See [HERE](https://github.com/hsccorp/obd-tcp-test) for an example ionic2 app
+
 ```javascript
 export class MyComponent {
   constructor(public navCtrl: NavController, public plt: Platform) {
