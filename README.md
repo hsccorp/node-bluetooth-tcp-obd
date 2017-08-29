@@ -98,6 +98,10 @@ Emitted with debugging information.
 
 Creates an instance of OBDReader.
 
+#### getPIDObjectByName (Name)
+
+Returns all the details of a PID for a given name - this does not write to the ODB dongle - it only returns preconfigured values in the library array representing the PID objects
+
 #### getPIDByName(Name)
 
 Find a PID-value by name.
